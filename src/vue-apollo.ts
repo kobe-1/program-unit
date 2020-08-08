@@ -20,7 +20,7 @@ const AUTH_TOKEN = 'apollo-token';
 
 //  Mongo App Setup
 //  ! Replace with you App ID from Mongo Realm
-export const APP_ID = 'microapp-lokxi';
+export const APP_ID = 'project-unit-k1-jgvrb';
 
 const app = new RealmWeb.App({
   id: APP_ID,
@@ -82,7 +82,9 @@ const defaultOptions = {
   link: authorizationHeaderLink.concat(httpLink),
 
   // Override default cache
-  cache: new InMemoryCache(),
+  cache: new InMemoryCache({
+    addTypename: false,
+  }),
 
   // Override the way the Authorization header is set
   // getAuth: (tokenName) => ...
